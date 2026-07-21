@@ -3,22 +3,22 @@ import { Type } from "@google/genai"
 export const quizSchema = {
     type: Type.OBJECT,
     properties: {
-        questoes: {
+        questions: {
             type: Type.ARRAY,
             items: {
                 type: Type.OBJECT,
                 properties: {
                     id: { type: Type.INTEGER },
-                    enunciado: { type: Type.STRING },
-                    alternativas: { type: Type.ARRAY, items: { type: Type.STRING } },
-                    respostaCorreta: { type: Type.STRING },
-                    explicacao: { type: Type.STRING, description: "Justificativa didática." }
+                    statement: { type: Type.STRING },
+                    options: { type: Type.ARRAY, items: { type: Type.STRING } },
+                    correctAnswer: { type: Type.STRING },
+                    explanation: { type: Type.STRING, description: "Didactic justification." }
                 },
-                required: ["id", "enunciado", "alternativas", "respostaCorreta", "explicacao"]
+                required: ["id", "statement", "options", "correctAnswer", "explanation"]
             }
         }
     },
-    required: ["questoes"]
+    required: ["questions"]
 }
 
 export const responseSchema = {
@@ -28,21 +28,21 @@ export const responseSchema = {
         studyPlan: {
             type: Type.OBJECT,
             properties: {
-                cronograma: {
+                schedule: {
                     type: Type.ARRAY,
                     items: {
                         type: Type.OBJECT,
                         properties: {
-                            etapa: { type: Type.STRING, description: "Ex: 'Etapa 1'" },
-                            titulo: { type: Type.STRING },
-                            conteudos: { type: Type.ARRAY, items: { type: Type.STRING } },
-                            tempoEstimado: { type: Type.STRING }
+                            stage: { type: Type.STRING, description: "Ex: 'Stage 1'" },
+                            title: { type: Type.STRING },
+                            contents: { type: Type.ARRAY, items: { type: Type.STRING } },
+                            estimatedTime: { type: Type.STRING }
                         },
-                        required: ["etapa", "titulo", "conteudos", "tempoEstimado"]
+                        required: ["stage", "title", "contents", "estimatedTime"]
                     }
                 }
             },
-            required: ["cronograma"]
+            required: ["schedule"]
         },
         diagnosticAssessment: quizSchema
     },
