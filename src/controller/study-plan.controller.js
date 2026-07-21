@@ -1,5 +1,5 @@
 import { GoogleGenAI } from "@google/genai"
-import { quizSchema, responseSchema } from "../gemini/schemas.gemini"
+import { quizSchema, responseSchema } from "../gemini/schemas.gemini.js"
 
 export {
     createTeachingPlan,
@@ -15,7 +15,8 @@ async function createTeachingPlan(req, res) {
             Você é um avaliador pedagógico profissional.
             Crie um plano de estudos progressivo para o assunto: "${theme}".
             Observação adicional do usuário: "${note}".
-            Dificuldade desejada pelo usuário: "${difficulty}".
+            Dificuldade do tema desejado pelo usuário: "${difficulty}",
+            sendo 0: iniciante, 1: intermediário, 2: avançado.
             Além disso, gere uma Avaliação Diagnóstica com 5 questões de múltipla escolha.
             Este teste servirá para medir o conhecimento prévio do aluno antes de iniciar os estudos,
             cobrindo conceitos base do tema.
