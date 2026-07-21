@@ -2,7 +2,6 @@ import "dotenv/config"
 import app from "./app.js"
 import sequelize from "./database/connection.js"
 import "./model/user.model.js"
-import "./model/question.model.js"
 
 const requiredEnvs = [
     "PORT",
