@@ -1,7 +1,8 @@
-import router from './index.js';
-const evaluationController = require('../controllers/evaluationController');
+import { Router } from 'express';
+import * as evaluationController from '../controllers/evaluationController.js';
 
-// Define a rota POST para avaliação
-router.post('/evaluate', evaluationController.processStudentEvaluation);
+evaluationRouter = Router()
 
-module.exports = router;
+evaluationRouter.post('/evaluate', evaluationController.processStudentEvaluation);
+
+export default evaluationRouter;
