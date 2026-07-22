@@ -5,7 +5,7 @@ export const createStudyPlanSchema = z.object({
         .string()
         .min(2)
         .max(255),
-    note: z
+    details: z
         .string()
         .min(2)
         .max(255),

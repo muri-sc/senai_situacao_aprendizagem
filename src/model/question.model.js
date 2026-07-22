@@ -1,12 +1,21 @@
 import sequelize from "../database/connection.js"
 import { DataTypes } from "sequelize"
 import { User } from "./user.model.js"
+import { StudyPlan } from "./study-plan.model.js"
 
-export const StudyPlan = sequelize.define("study_plans", {
+export const Question = sequelize.define("questions", {
     id: {
         type: DataTypes.INTEGER,
         autoIncrement: true,
         primaryKey: true
+    },
+    studyPlanId: {
+        type: DataTypes.INTEGER,
+        allowNull: false,
+        references: {
+            model: StudyPlan,
+            key: "id"
+        }
     },
     userId: {
         type: DataTypes.INTEGER,
@@ -16,24 +25,24 @@ export const StudyPlan = sequelize.define("study_plans", {
             key: "id"
         }
     },
-    theme: {
-        type: DataTypes.STRING,
-        allowNull: false
-    },
-    note: {
-        type: DataTypes.STRING,
-        allowNull: true
-    },
-    difficulty: {
+    questionNumber: {
         type: DataTypes.INTEGER,
         allowNull: false
     },
-    targetSubject: {
+    statement: {
         type: DataTypes.STRING,
         allowNull: false
     },
-    planDetails: {
+    options: {
         type: DataTypes.JSONB,
         allowNull: false
+    },
+    correctAnswer: {
+        type: DataTypes.STRING,
+        allowNull: false
+    },
+    explanation: {
+        type: DataTypes.STRING,
+        allowNull: true
     }
 })
