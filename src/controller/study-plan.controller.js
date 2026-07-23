@@ -1,4 +1,4 @@
-import { GoogleGenAI } from "@google/genai"
+import ai from "../config/gemini.config.js"
 import { responseSchema } from "../gemini/schemas.gemini.js"
 import { StudyPlan } from "../model/study-plan.model.js"
 import { Question } from "../model/question.model.js"
@@ -6,8 +6,6 @@ import { Question } from "../model/question.model.js"
 export {
     createTeachingPlan,
 }
-
-const ai = new GoogleGenAI({ apiKey: process.env.API_KEY })
 
 async function createTeachingPlan(req, res) {
     try {

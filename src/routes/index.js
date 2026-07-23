@@ -9,6 +9,6 @@ const router = Router()
 router.use("/auth", authRouter)
 router.use("/user", userRouter)
 router.use("/study", studyRouter)
-router.use("/evauluate", evaluationRouter)
+router.use("/evaluate", evaluationRouter)
 
 export default router

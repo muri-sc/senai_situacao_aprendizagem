@@ -12,7 +12,8 @@ const requiredEnvs = [
     "DB_NAME",
     "SALT_ROUNDS",
     "JWT_SECRET",
-    "JWT_EXPIRES_IN"
+    "JWT_EXPIRES_IN",
+    "API_KEY"
 ]
 
 for (const env of requiredEnvs) {

@@ -48,3 +48,13 @@ export const responseSchema = {
     },
     required: ["targetSubject", "studyPlan", "diagnosticAssessment"]
 }
+
+export const evaluationSchema = {
+    type: Type.OBJECT,
+    properties: {
+        score: { type: Type.INTEGER, description: "Número de acertos de 0 a 5" },
+        level: { type: Type.STRING, description: "Iniciante, Intermediário ou Avançado" },
+        feedback: { type: Type.STRING, description: "Parágrafo de feedback construtivo" }
+    },
+    required: ["score", "level", "feedback"]
+}

@@ -53,7 +53,7 @@ async function loginUserHandler(req, res) {
 
         const passwordMatch = await bcrypt.compare(password, user.password)
         if (!passwordMatch) {
-            return res.status(404).json({ message: "Invalid email or password" })
+            return res.status(401).json({ message: "Invalid email or password" })
         }
 
         const JWT_SECRET = process.env.JWT_SECRET
