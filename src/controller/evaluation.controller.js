@@ -1,7 +1,7 @@
-import aiEvaluationService from '../services/aiEvaluationService.js';
-import Evaluation from '../models/Evaluation.js';
+import { evaluateAnswers } from '../services/aiEvaluationService.js';
+import Evaluation from '../model/evaluation.model.js';
 
-export const processStudentEvaluation = async (req, res) => {
+export async function processStudentEvaluation(req, res) {
   const { studentId, questions, studentAnswers } = req.body;
 
   // Validação básica de entrada

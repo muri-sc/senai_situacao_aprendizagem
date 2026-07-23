@@ -1,8 +1,8 @@
 import { Router } from 'express';
-import * as evaluationController from '../controllers/evaluationController.js';
+import { processStudentEvaluation } from "../controller/evaluation.controller.js";
 
-evaluationRouter = Router()
+const evaluationRouter = Router()
 
-evaluationRouter.post('/evaluate', evaluationController.processStudentEvaluation);
+evaluationRouter.post('/evaluate', processStudentEvaluation);
 
 export default evaluationRouter;

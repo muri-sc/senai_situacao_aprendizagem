@@ -1,4 +1,4 @@
-import aiModel from '../config/gemini.js';
+import aiModel from '../config/gemini.config.js';
 
 export const evaluateAnswers = async (questions, studentAnswers) => {
   const prompt = `

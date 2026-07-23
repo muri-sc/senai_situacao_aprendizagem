@@ -9,4 +9,4 @@ const Evaluation = sequelize.define('Evaluation', {
   rawAnswers: { type: DataTypes.JSONB, allowNull: false }
 });
 
-module.exports = Evaluation;
+export default Evaluation;
