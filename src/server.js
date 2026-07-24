@@ -22,7 +22,7 @@ for (const env of requiredEnvs) {
 
 const PORT = process.env.PORT
 
-sequelize.sync().then(() => {
+sequelize.sync({ alter: true }).then(() => {
     app.listen(PORT, () => {
         console.log(`Server running on http://localhost:${PORT}`)
     })
