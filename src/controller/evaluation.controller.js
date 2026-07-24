@@ -61,6 +61,7 @@ export async function processStudentEvaluation(req, res) {
 
     const savedEvaluation = await Evaluation.create({
       studentId: userId,
+      studyPlanId: plan.id,
       score: aiResult.score,
       level: aiResult.level,
       feedback: aiResult.feedback,
